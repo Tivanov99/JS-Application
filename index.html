@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calories</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <select class="products" id="foods">
+        <option>
+            Изберете продукт
+        </option>
+        <option value= "Ягоди">
+            Ягоди
+        </option>
+        <option value= "Банан">
+            Банан
+        </option>
+        <option value= "Ябълкa">
+            Ябълкa
+        </option>
+        <option value= "Ябълков сос">
+            Ябълков сос
+        </option>
+        <option value= "Шницел(Говежди)">
+            Шницел(Говежди)
+        </option>
+        <option value= "Пържола(Говежди)">
+            Пържола(Говежди)
+        </option>
+        <option value= " Говеждо(Варено)">
+            Пържола(Говежди)
+        </option>
+
+    </select>
+    <input class="grams" placeholder="Грамаж" type="number" id="quantity" min="1" max="10000">
+    <button class="add-button" id="add">Добави</button>
+    <button class="hidden update-btn" id="update">Запази промените</button>
+    <br>
+    <br>
+    <div id="addedProducts">
+        <ol>
+
+        </ol>
+        <button id="sum" class="sum-btn">Пресметни</button>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
