@@ -10,7 +10,7 @@ button.addEventListener('click',(e)=>{
     e.preventDefault();
 
     let resultElement = document.createElement('label');
-    resultElement.textContent = (months / 12) *  (price.value * (percentage.value/100));
+    resultElement.textContent = `${(months.value / 12) *  (price.value * (percentage.value/100))}`;
     resultElement.classList.add('result');
 
     let resultDiv= document.querySelector("#resultPlace");
