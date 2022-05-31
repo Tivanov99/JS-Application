@@ -13,4 +13,6 @@ sumButton.addEventListener('click',(e)=>{
     resultItem.textContent= `${((Number(fuelLitters.value)/Number(distance.value)) * 100).toFixed(2)}л на 100км`;
     boddy.appendChild(resultItem);
 
-})
+    CreateFile();
+
+    });
