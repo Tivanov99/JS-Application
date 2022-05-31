@@ -9,7 +9,6 @@ let boddy = document.querySelector("body");
 
 sumButton.addEventListener('click',(e)=>{
     e.preventDefault();
-    console.log("da");
     let resultItem = document.createElement("label");
     resultItem.textContent= `${((Number(fuelLitters.value)/Number(distance.value)) * 100).toFixed(2)}л на 100км`;
     boddy.appendChild(resultItem);
