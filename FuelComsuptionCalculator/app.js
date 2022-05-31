@@ -1,0 +1,1 @@
+let distance = document.querySelector("#distance");
