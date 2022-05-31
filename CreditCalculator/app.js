@@ -10,13 +10,24 @@ button.addEventListener('click',(e)=>{
     e.preventDefault();
     let resultDiv= document.querySelector("#resultPlace");
     
-    resultDiv.lastChild.remove();
+    if(resultDiv.childNodes.length > 1){
+        resultDiv.lastChild.remove();
+        resultDiv.lastChild.remove();
+    }
 
-    let resultElement = document.createElement('label');
-    resultElement.textContent = `Лихвата в лева е : ${(months.value / 12) *  (price.value * (percentage.value/100))}лв`;
-    resultElement.classList.add('result');
+    let yearInterest = document.createElement('label');
+    yearInterest.textContent = `Годишната лихвата в лева е : ${(price.value * (percentage.value/100))}лв`;
+    yearInterest.classList.add('result');
 
-    resultDiv.appendChild(resultElement);
+    let brElement = document.createElement('br');
+
+    let monthsInterest = document.createElement('label');
+    monthsInterest.textContent = `Месечната лихвата в лева е : ${(price.value * (percentage.value/100))/months.value}лв`;
+    monthsInterest.classList.add('result');
+
+    resultDiv.appendChild(yearInterest);
+    resultDiv.appendChild(brElement);
+    resultDiv.appendChild(monthsInterest);
 })
 
 
