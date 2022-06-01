@@ -18,7 +18,7 @@ button.addEventListener("click", (e) => {
 
   let yearInterest = document.createElement("label");
   yearInterest.textContent = `Годишната лихвата в лева е : ${
-    price.value * (percentage.value / 100)
+    (price.value * (percentage.value / 100))/ (months.value/12)
   }лв`;
   yearInterest.classList.add("result");
 
