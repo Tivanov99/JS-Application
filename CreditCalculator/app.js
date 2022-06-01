@@ -16,7 +16,7 @@ button.addEventListener("click", (e) => {
     resultDiv.lastChild.remove();
   }
 
-  let yearInterest = document.createElement("label");
+  let yearInterest = document.createElement("h2");
   yearInterest.textContent = `Годишната лихвата в лева е : ${
     (price.value * (percentage.value / 100))/ (months.value/12)
   }лв`;
@@ -24,7 +24,7 @@ button.addEventListener("click", (e) => {
 
   let brElement = document.createElement("br");
 
-  let monthsInterest = document.createElement("label");
+  let monthsInterest = document.createElement("h2");
   monthsInterest.textContent = `Месечната лихвата в лева е : ${
     (price.value * (percentage.value / 100)) / months.value
   }лв`;
