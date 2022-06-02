@@ -10,27 +10,47 @@ button.addEventListener("click", (e) => {
   e.preventDefault();
   let resultDiv = document.querySelector("#resultPlace");
 
-  if (resultDiv.childNodes.length > 1) {
-    resultDiv.lastChild.remove();
-    resultDiv.lastChild.remove();
-    resultDiv.lastChild.remove();
+  if (resultDiv.childNodes.length > 0) {
+    while (resultDiv.childNodes.length > 0) {
+      resultDiv.lastChild.remove();
+    }
   }
 
-  let yearInterest = document.createElement("h2");
-  yearInterest.textContent = `Годишната лихвата в лева е : ${
-    (price.value * (percentage.value / 100))/ (months.value/12)
-  }лв`;
-  yearInterest.classList.add("result");
+  let priceValue = price.value;
+  let percentageValue = percentage.value;
+  let monthsValue = months.value;
+  console.log(isNaN(priceValue));
+  console.log(percentageValue);
+  console.log(monthsValue);
+  if (
+    priceValue != "" &&
+    !isNaN(priceValue) &&
+    percentageValue != "" &&
+    !isNaN(percentageValue) &&
+    monthsValue != "" &&
+    !isNaN(monthsValue)
+  ) {
+    let yearInterest = document.createElement("h2");
+    yearInterest.textContent = `Годишната лихвата в лева е : ${
+      (price.value * (percentage.value / 100)) / (months.value / 12)
+    }лв`;
+    yearInterest.classList.add("result");
 
-  let brElement = document.createElement("br");
+    let brElement = document.createElement("br");
 
-  let monthsInterest = document.createElement("h2");
-  monthsInterest.textContent = `Месечната лихвата в лева е : ${
-    (price.value * (percentage.value / 100)) / months.value
-  }лв`;
-  monthsInterest.classList.add("result");
+    let monthsInterest = document.createElement("h2");
+    monthsInterest.textContent = `Месечната лихвата в лева е : ${
+      (price.value * (percentage.value / 100)) / months.value
+    }лв`;
+    monthsInterest.classList.add("result");
 
-  resultDiv.appendChild(yearInterest);
-  resultDiv.appendChild(brElement);
-  resultDiv.appendChild(monthsInterest);
+    resultDiv.appendChild(yearInterest);
+    resultDiv.appendChild(brElement);
+    resultDiv.appendChild(monthsInterest);
+  } else {
+    let errorMessage = document.createElement("h2");
+    errorMessage.textContent = "Невалидни входни данни!";
+    errorMessage.classList.add("error-message");
+    resultDiv.appendChild(errorMessage);
+  }
 });

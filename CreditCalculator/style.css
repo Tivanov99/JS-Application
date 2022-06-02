@@ -28,6 +28,9 @@
 .result-place{
     margin-top: 25px;
 }
+.error-message{
+    margin-right: 595px;
+}
 body {
     background-image: url('credit2.jpg');
 }
