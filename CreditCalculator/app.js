@@ -19,9 +19,7 @@ button.addEventListener("click", (e) => {
   let priceValue = price.value;
   let percentageValue = percentage.value;
   let monthsValue = months.value;
-  console.log(isNaN(priceValue));
-  console.log(percentageValue);
-  console.log(monthsValue);
+
   if (
     priceValue != "" &&
     !isNaN(priceValue) &&
